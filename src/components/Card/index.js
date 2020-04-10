@@ -1,4 +1,4 @@
-import React from "React";
+import React, { useState } from "React";
 
 const Card = props => {
   const values = {
@@ -16,12 +16,13 @@ const Card = props => {
     king: 10,
     ace: [1, 11]
   };
-  let cardValue = props.card;
+  const cardValue = useState(props.card);
+  const suit = useState(props.suit);
   return (
     <div className="card" ref={values[cardValue]}>
-      <span className={props.suit}>{props.suit}</span>
-      <figure className={props.card}>{props.card}</figure>
-      <span className={props.suit}>{props.suit}</span>
+      <span className={suit}>{suit}</span>
+      <figure className={card}>{card}</figure>
+      <span className={suit}>{suit}</span>
     </div>
   );
 };
